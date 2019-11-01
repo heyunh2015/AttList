@@ -1,8 +1,10 @@
 # A Hierarchical Self-Attentive Model for Recommending User-Generated Item Lists
 Yun He, Jianling Wang, Wei Niu and James Caverlee
+
 Department of Computer Science and Engineering, Texas A&M University
-e-mail: yunhe@tamu.edu
-weChat Id: 534513112
+
+E-mail: yunhe@tamu.edu
+
 Personal Page: http://people.tamu.edu/~yunhe/
 
 Datasets of AttList from CIKM2019, which have been de-identified. No real user id, list id and item id are released, no worries!
