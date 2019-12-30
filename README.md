@@ -16,11 +16,13 @@ The *AttList* algorithm recommends user-generated item lists (playlists on Spoti
 AttList learns the user preference from training datasets and then ranks the lists for the users in testing datasets. Folder AttList_cikm2019 contains our code and preprocessed datasets with split used in our paper. Folder attList_CIKM2019_data contains raw datasets without preprocessed (which have been de-identified. No real user id, list id and item id are released, no worries!). 
 
 #### Input
-The input of AttList includes the set of interactions between users and lists from the training dataset:
+The input of AttList includes the set of interactions between users and lists:
 
 ``userId [listId_1, listId_2, listId_3,...]``
 
-which means that the user interacted with the lists (e.g., playlists on Spoftify). These interactions are stored in userList_*.txt file, like AttList/AttList_cikm2019/data/goodreads/userList_goodreads.txt. Note that we split userList_*.txt into train.txt, validation.txt and test.txt and only use train.txt in the training phase, otherwise the information will be leaked. Of course, validation.txt is for hyper-parameters selection and test.txt is for the evaluation.
+which means that the user interacted with the lists (e.g., playlists on Spoftify). These interactions are stored in userList_\*.txt file, like AttList/AttList_cikm2019/data/goodreads/userList_goodreads.txt. 
+
+Note that we split userList_\*.txt into train.txt, validation.txt and test.txt and only use train.txt in the training phase, otherwise the information will be leaked. Of course, validation.txt is for hyper-parameters selection and test.txt is for the evaluation.
 
 The format of train.txt, validation.txt and test.txt are like this:
 
@@ -30,7 +32,7 @@ And items contained in that list.
 
 ``listId [itemId_1, itemId_2, itemId_3,...]``
 
-which means that the list contains these items. These containing relationships are storded in listItem_*.txt, like AttList/AttList_cikm2019/data/goodreads/listItem_goodreads.txt
+which means that the list contains these items. These containing relationships are storded in listItem_\*.txt, like AttList/AttList_cikm2019/data/goodreads/listItem_goodreads.txt
 
 #### Output
 The output are the evaluation results comparing the ranked lists of AttList and the groundtruth from the test.txt. An example is presented as follows:
@@ -45,7 +47,7 @@ NDCG@10: 0.088376425288
 ```
 
 #### Run
-./PsiRec.py --train_file filePath --test_file filePath --walk_length 80 --num_walks 10
+python Attlist_cikm2019.py --dataSetName Spotify
 
 #### Parameters
 - -train_file, the training dataset file;
