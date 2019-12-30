@@ -49,39 +49,41 @@ NDCG@10: 0.088376425288
 #### Run
 python Attlist_cikm2019.py --dataSetName Spotify
 
-#### Parameters
-- -train_file, the training dataset file;
-- -test_file, the testing dataset file (or validation dataset file);
-- -walk_length, the length of a random walk; the default is 80;
-- -num_walks, the number of random walks visiting each user and item; the default is 10;
-- -window_size, the context size for sampling the indirect user-item pairs; the default is 3;
-- -user_number, the number of users in the dataset;
-- -item_number, the number of items in the dataset;
-- -train_epoch, the iterations of ALS matrix factorization; the default is 25;
-- -lambda_value, the regularization value for ALS matrix factorization; the default is 0.25.
-- -latent_factors, the number of latent factors of ALS matrix factorization; the default is 100;
-- -validation, the Boolean variable to decide if do the validation on the validation dataset; the default is 0.
+For more hyper-parameters, please see Attlist_cikm2019.py.
 
 ### Files in folder
 
-#### PsiRec
-- -PsiRec.py, the main function of PsiRec;
-- -randomWalks.py, the file to generate random walks from the user-item bigraph;
-- -SPPMI.py, the file to calculate Shifted Positive Pointwise Mutual Information (SPPMI) value as the confidence for each pseudo-implicit feedback;
-- -alsMF.py, the file to apply latent factors model to predict the item lists for each user based on the dataset enriched by PsiRec;
-- -evaludation.py, the file to do the evaluation;
+#### attList_CIKM2019_data
+- -goodreads.zip, unpreprocessed goodreads dataset;
+- -spotify.zip, unpreprocessed spotify dataset;
+- -zhihu.zip, unpreprocessed zhihu dataset;
+- -examples_listContainItem.txt;
+- -examples_userFollowingList.txt;
 
-#### Data
-- -preProcessData.py, the file to preprocess the raw datasets, including transferring explicit datasets to implicit datasets and split the dataset into three parts: training, testing and validation;
-- -DataInPaper, the datasets exactly the same in our paper, which can be used directly by PsiRec.py;
-- -rawData, the raw datasets are too large to be handled here, but you can download according the URLs presented in our paper;
-- -preProcessedData, the preprocessed datasets, which can be used directly by PsiRec.py;
+#### AttList_cikm2019
+- -Attlist_cikm2019.py, the main function of AttList;
+- -AttLayer_cikm2019.py, the file of vanilla attention module;
+- -AttLayerSelf_cikm2019.py, the file of self-attention module;
+- -getDataSet_cikm2019.py, the file to get data structure for training and testing;
+- -evaluate_cikm2019.py, the file to do the evaluation;
+
+#### Data (included in AttList_cikm2019)
+- -goodreads: userList_goodreads.txt, listItem_goodreads.txt, train.txt, validation.txt and text.txt;
+- -spotify: userList_spotify.txt, listItem_spotify.txt, train.txt, validation.txt and text.txt;
+- -zhihu: userList_zhihu.txt, listItem_zhihu.txt, train.txt, validation.txt and text.txt;
 
 ### Citation
-Pending.
+@inproceedings{he2019hierarchical,
+  title={A Hierarchical Self-Attentive Model for Recommending User-Generated Item Lists},
+  author={He, Yun and Wang, Jianling and Niu, Wei and Caverlee, James},
+  booktitle={Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
+  pages={1481--1490},
+  year={2019},
+  organization={ACM}
+}
 
-### Acknowledgement
-The technique of randomWalks.py is learned from https://github.com/aditya-grover/node2vec. Th first author is Aditya Grover from Standford University. Thanks to them!
+### Important Tip
+The evaluation protocol in our paper is to generated the prediction scores for all lists in the dataset, which is slow. Hence, in the future, we may first randomly sample 100 negative samples. And the model only needs to predict scores for these 100 negative samples and ground-truth samples. This protocol has been widely used in recommendation research community.
 
 
 
