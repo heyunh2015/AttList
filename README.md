@@ -73,21 +73,14 @@ For more hyper-parameters, please see Attlist_cikm2019.py.
 - -zhihu: userList_zhihu.txt, listItem_zhihu.txt, train.txt, validation.txt and text.txt;
 
 ### Citation
-@inproceedings{he2019hierarchical,
-
-  title={A Hierarchical Self-Attentive Model for Recommending User-Generated Item Lists},
-  
-  author={He, Yun and Wang, Jianling and Niu, Wei and Caverlee, James},
-  
-  booktitle={Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
-  
-  pages={1481--1490},
-  
-  year={2019},
-  
-  organization={ACM}
-  
-}
+@inproceedings{he2019hierarchical,<br>
+  title={A Hierarchical Self-Attentive Model for Recommending User-Generated Item Lists},<br>
+  author={He, Yun and Wang, Jianling and Niu, Wei and Caverlee, James},<br>
+  booktitle={Proceedings of the 28th ACM International Conference on Information and Knowledge Management},<br>
+  pages={1481--1490},<br>
+  year={2019},<br>
+  organization={ACM}<br>
+}<br>
 
 ### Important Tip
 The evaluation protocol in our paper is to generated the prediction scores for all lists in the dataset, which is slow. Hence, in the future, we may first randomly sample 100 negative samples. And the model only needs to predict scores for these 100 negative samples and ground-truth samples. This protocol has been widely used in recommendation research community.
