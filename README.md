@@ -74,12 +74,19 @@ For more hyper-parameters, please see Attlist_cikm2019.py.
 
 ### Citation
 @inproceedings{he2019hierarchical,
+
   title={A Hierarchical Self-Attentive Model for Recommending User-Generated Item Lists},
+  
   author={He, Yun and Wang, Jianling and Niu, Wei and Caverlee, James},
+  
   booktitle={Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
+  
   pages={1481--1490},
+  
   year={2019},
+  
   organization={ACM}
+  
 }
 
 ### Important Tip
