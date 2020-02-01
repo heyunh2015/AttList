@@ -12,7 +12,14 @@ This is the implementation of *AttList* as described in the paper:<br>
 
 The *AttList* algorithm recommends user-generated item lists (playlists on Spotify, book lists on Goodreads and answer collections on Zhihu) to other users.
 
-### Usage 
+We also have another related work in WSDM 2020, which predicts the next item of a list:
+> Consistency-Aware Recommendation for User-Generated ItemList Continuation.<br>
+> WSDM, 2020.<br>
+> Yun He, Yin Zhang, Weiwen Liu and James Caverlee.<br>
+> Department of Computer Science and Engineering, Texas A&M University.<br>
+> Link: https://github.com/heyunh2015/ListContinuation_WSDM2020 <br>
+
+### Usage of AttList
 AttList learns the user preference from training datasets and then ranks the lists for the users in testing datasets. Folder AttList_cikm2019 contains our code and preprocessed datasets with split used in our paper. Folder attList_CIKM2019_data contains raw datasets without preprocessed (which have been de-identified. No real user id, list id and item id are released, no worries!). 
 
 #### Input
